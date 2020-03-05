@@ -1,1 +1,109 @@
-<p>administrador works!</p>
+<div class="contenedor">
+    <div class="taxistas">
+        <h1>Lista de taxistas</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-fixed table-bordered table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-2">Identificacion</th>
+                            <th class="col-xs-2">Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr role="button" data-toggle="modal" data-target="#infoTaxista" *ngFor="let taxista of taxistas" (click)="infoTaxista(taxista.idTaxista)">
+                            <td class="col-xs-2">{{taxista.idTaxista}}</td>
+                            <td class="col-xs-2">{{taxista.nombre}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <a class="btn btn-primary" href="#" role="button" data-toggle="modal" data-target="#agregarTaxista">Agregar</a>
+        <!-- Modal Agregar -->
+        <div class="modal fade" id="agregarTaxista" tabindex="-1" role="dialog" aria-labelledby="agregarTaxistaLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="agregarTaxistaLabel">Agregar taxista</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Identificación</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Nombre</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Info Taxista -->
+        <div class="modal fade" id="infoTaxista" tabindex="-1" role="dialog" aria-labelledby="infoTaxistaLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoTaxistaLabel">Taxista</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Identificación</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Nombre</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="taxis">
+        <h1>Lista de taxistas</h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-fixed table-bordered table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-2">Placa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr (click)="funcion()" *ngFor="let taxi of taxis">
+                            <td class="col-xs-2">{{taxi.placa}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
